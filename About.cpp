@@ -89,12 +89,12 @@ void About::draw() const
 		FontAsset(U"Medium_40")(U"製作者").draw(Scene::Center().movedBy(-350, -150));
 		FontAsset(U"Medium_30")(U"札束人間").draw(Scene::Center().movedBy(-250, -100));
 		FontAsset(U"Medium_30")(U"転起").draw(Scene::Center().movedBy(0, -100));
-		FontAsset(U"Medium_30")(U"D_HARU").draw(Scene::Center().movedBy(-250, -50));
+		FontAsset(U"Medium_30")(U"HARUNOKI").draw(Scene::Center().movedBy(-250, -50));
 		FontAsset(U"Medium_30")(U"幻創").draw(Scene::Center().movedBy(0, -50));
-		FontAsset(U"Medium_30")(U"D_dett").draw(Scene::Center().movedBy(-250, 0));
-		FontAsset(U"Medium_30")(U"D_ooi").draw(Scene::Center().movedBy(0, 0));
-		FontAsset(U"Medium_30")(U"D_aori").draw(Scene::Center().movedBy(-250, 50));
-		FontAsset(U"Medium_30")(U"D_poru").draw(Scene::Center().movedBy(0, 50));
+		FontAsset(U"Medium_30")(U"detteiu").draw(Scene::Center().movedBy(-250, 0));
+		FontAsset(U"Medium_30")(U"ooi").draw(Scene::Center().movedBy(0, 0));
+		FontAsset(U"Medium_30")(U"aoriika").draw(Scene::Center().movedBy(-250, 50));
+		FontAsset(U"Medium_30")(U"poruti").draw(Scene::Center().movedBy(0, 50));
 	}
 
 	// 2ページ目

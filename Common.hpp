@@ -1,5 +1,6 @@
 ﻿# pragma once
 #include "Sivphoton.hpp"
+#include "ENCRYPTED_PHOTON_APP_ID.SECRET"
 
 // シーンの名前
 enum class State//enumは列挙型上から値がインクリメントされる classをいれることによって値が代入できなくなり安全になる
@@ -27,20 +28,21 @@ struct GameData
 	Array<int32> goal=Array<int32>(2);
 	Array<Grid<int>> ChangeMaze;
 
-
-	// プレイヤー番号
-	int pnum;
-
-
 	//ネットワーク
-	MyNetwork* mynetwork;
+#if SIV3D_BUILD(DEBUG)
+	MyNetWorkV2 network{ std::string(SIV3D_OBFUSCATE(PHOTON_APP_ID)), U"2.0", Verbose::Yes };
+#else
+	MyNetWorkV2 network{ std::string(SIV3D_OBFUSCATE(PHOTON_APP_ID)), U"2.0", Verbose::No };
+#endif
+
 	int highscore;
 	
+	// プレイヤー番号
+	int pnum;
 
 	//使ったアイテム
 	Array<int32> Used1;
 	Array<int32> Used2;
-
 
 	// 音量
 	// 全体音量

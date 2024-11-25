@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "NetworkSystem.hpp"
+#include "Multiplayer_Photon.hpp"
 #include "Maze.hpp"
 #include "RLE.hpp"
 #include "Common.hpp"
@@ -379,4 +380,10 @@ private:
 			//迷路情報を送り出す
 		}
 	}
+};
+
+class MyNetWorkV2 : public Multiplayer_Photon
+{
+public:
+	using Multiplayer_Photon::Multiplayer_Photon;
 };

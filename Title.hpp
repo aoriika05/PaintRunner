@@ -13,7 +13,7 @@ public:
 
 	// メニュー選択
 	// Menu番号の最大値
-	uint8 Title_Menu_Max = 5;
+	uint8 Title_Menu_Max = 4;
 
 private:
 	// メニュー選択

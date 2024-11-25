@@ -125,6 +125,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mapinfo.cpp" />
     <ClCompile Include="Matching.cpp" />
+    <ClCompile Include="Multiplayer_Photon.cpp" />
     <ClCompile Include="NetworkSystem.cpp" />
     <ClCompile Include="Option.cpp" />
     <ClCompile Include="result.cpp" />
@@ -351,6 +352,7 @@
     <ClInclude Include="mapinfo.hpp" />
     <ClInclude Include="Matching.hpp" />
     <ClInclude Include="Maze.hpp" />
+    <ClInclude Include="Multiplayer_Photon.hpp" />
     <ClInclude Include="NetworkSystem.hpp" />
     <ClInclude Include="Option.hpp" />
     <ClInclude Include="result.hpp" />

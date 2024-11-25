@@ -23,8 +23,8 @@ Option::Option(const InitData& init)
 
 	if (net == nullptr)
 	{
-		const String encryptedAppID = ENCRYPTED_PHOTON_APP_ID;
-		const String appID = NetworkSystem::DecryptPhotonAppID(encryptedAppID);
+		const std::string encryptedAppID{ SIV3D_OBFUSCATE(PHOTON_APP_ID) };
+		const String appID = Unicode::WidenAscii(encryptedAppID);
 
 		net = new MyNetwork(appID, U"1.0");
 

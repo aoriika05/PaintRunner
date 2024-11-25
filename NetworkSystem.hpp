@@ -22,7 +22,7 @@ enum class networkID
 
 namespace Set_Val
 {
-	const bool Output_Print = false;
+	const bool Output_Print = SIV3D_BUILD(DEBUG);
 }
 
 

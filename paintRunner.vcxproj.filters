@@ -180,6 +180,9 @@
     <ClCompile Include="Title.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Multiplayer_Photon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -895,6 +898,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Title.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Multiplayer_Photon.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

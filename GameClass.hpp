@@ -387,53 +387,51 @@ public:
 class GameTimer
 {
 	const Font font{ 100 };
-	//分数*60*fps
-	int time = 5*60*60;
-	int Etime = 0;
+	Timer timer{ 5min };
 public:
 	void update()
 	{
-		time--;
-		Etime++;
+		if (not timer.isRunning())
+		{
+			timer.start();
+		}
 	}
 	int gettime()
 	{
-		return time/60;
+		//return time/60;
+		return timer.s();
 	}
 	int getEtime()
 	{
-		return Etime/60;
+		//return Etime/60;
+		return DurationCast<Seconds>(timer.duration()).count() - timer.s_ceil();
 	}
 	//残り時間の描画
 	void draw()
 	{
-		if (time > 0)
+		if (not timer.reachedZero())
 		{
-			if ((time / 60 % 60) < 10)
-			{
-				font(time / 60 / 60, U":0", time / 60 % 60).draw(0, 0);
-			}
-			else
-			{
-				font(time / 60 / 60, U":", time / 60 % 60).draw(0, 0);
-			}
+			//if ((time / 60 % 60) < 10)
+			//{
+			//	font(time / 60 / 60, U":0", time / 60 % 60).draw(0, 0);
+			//}
+			//else
+			//{
+			//	font(time / 60 / 60, U":", time / 60 % 60).draw(0, 0);
+			//}
+			font(U"{}:{:02d}"_fmt(timer.min(), timer.s_ceil())).draw(0, 0);
 		}
 	}
 	void GameClearTime()//片方がクリア時に時間変更
 	{
-		if (time >= 30 * 60)
+		if (timer.remaining() >= 30s)
 		{
-			time = 30 * 60;
+			timer.setRemaining(30s);
 		}
 	}
 	bool  TimeOver()//時間切れ
 	{
-		if (time == 0)
-		{
-			return 1;
-		}
-
-		return 0;
+		return timer.reachedZero();
 	}
 };
 

@@ -151,7 +151,7 @@ void Title::update()
 
 	if (KeyDown.down())
 	{
-		if (Title_Menu_Select < Title_Menu_Max - 1)
+		if (Title_Menu_Select < Title_Menu_Max)
 		{
 			Title_Menu_Select = Title_Menu_Select + 1;
 		}
@@ -185,9 +185,9 @@ void Title::update()
 			break;
 
 		case 4:
-				// 終了
-				System::Exit();
-				break;
+			// 終了
+			System::Exit();
+			break;
 		}
 	}
 
@@ -204,7 +204,7 @@ void Title::draw() const
 	Scene::SetBackground(ColorF(0.3, 0.4, 0.5));
 
 	// 背景画像
-	TextureAsset(U"Title_Image0").resized(800).drawAt(Scene::Center().movedBy(0, 0));
+	TextureAsset(U"Title_Image0").resized(800).drawAt(Scene::Center());
 	
 
 	// タイトル

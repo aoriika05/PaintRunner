@@ -97,29 +97,29 @@ void Main()
 	//AudioAsset::Register(U"Title_BGM2", U"Audio/BGM/Title_BGM/ワクワクアリクイ.mp3");	// Title.cpp, SoundBox.cpp
 	//AudioAsset::Load(U"Title_BGM2");
 	AudioAsset::Register(U"Setting_BGM0", U"Audio/BGM/Setting_BGM/休日ショッピング的なBGM.mp3");	// Setting.cpp, Howtoplay.cpp, About.cpp, SoundBox.cpp
-	AudioAsset::Load(U"Setting_BGM0");
+	AudioAsset::LoadAsync(U"Setting_BGM0");
 	//AudioAsset::Register(U"Setting_BGM1", U"Audio/BGM/Setting_BGM/休日ショッピング的なBGM_2.mp3");	// Setting.cpp, Howtoplay.cpp, About.cpp, SoundBox.cpp
 	//AudioAsset::Load(U"Setting_BGM1");
 	//AudioAsset::Register(U"Setting_BGM2", U"Audio/BGM/Setting_BGM/8bit_Game_Menu.mp3");	// Setting.cpp, Howtoplay.cpp, About.cpp, SoundBox.cpp
 	//AudioAsset::Load(U"Setting_BGM2");
 	AudioAsset::Register(U"Result_Win_BGM0", U"Audio/BGM/Result_BGM/Trick_style.mp3");	// Result.cpp, SoundBox.cpp
-	AudioAsset::Load(U"Result_Win_BGM0");
+	AudioAsset::LoadAsync(U"Result_Win_BGM0");
 	AudioAsset::Register(U"Result_Lose_BGM0", U"Audio/BGM/Result_BGM/DUB_MACHINE_1.mp3");	// Result.cpp, SoundBox.cpp
-	AudioAsset::Load(U"Result_Lose_BGM0");
+	AudioAsset::LoadAsync(U"Result_Lose_BGM0");
 	AudioAsset::Register(U"Matching_BGM0", U"Audio/BGM/Match_BGM/超使いやすいドラム&ベース無限BGM.mp3");	// Matching.cpp, Option.cpp, SoundBox.cpp
-	AudioAsset::Load(U"Matching_BGM0");
+	AudioAsset::LoadAsync(U"Matching_BGM0");
 	//AudioAsset::Register(U"Matching_BGM1", U"Audio/BGM/Match_BGM/超使いやすいドラム&ベース無限BGM_2.mp3");	// Matching.cpp, Option.cpp, SoundBox.cpp
 	//AudioAsset::Load(U"Matching_BGM1");
 	//AudioAsset::Register(U"Game_BGM0", U"Audio/BGM/Game_BGM/サイバーホップ.mp3");	// Game.cpp, SoundBox.cpp
 	//AudioAsset::Load(U"Game_BGM0");
 	AudioAsset::Register(U"Game_BGM1", U"Audio/BGM/Game_BGM/サイバーポップ_2.mp3");	// Game.cpp, SoundBox.cpp
-	AudioAsset::Load(U"Game_BGM1");
+	AudioAsset::LoadAsync(U"Game_BGM1");
 	AudioAsset::Register(U"GameSE0", U"Audio/SE/se_magic_tititi.mp3");	// 
-	AudioAsset::Load(U"GameSE0");
+	AudioAsset::LoadAsync(U"GameSE0");
 	AudioAsset::Register(U"GameSE1", U"Audio/SE/se_magic_effect1.mp3");	// 
-	AudioAsset::Load(U"GameSE1");
+	AudioAsset::LoadAsync(U"GameSE1");
 	AudioAsset::Register(U"GameSE2", U"Audio/SE/se_down.mp3");	// 
-	AudioAsset::Load(U"GameSE2");
+	AudioAsset::LoadAsync(U"GameSE2");
 
 
 	// Font

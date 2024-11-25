@@ -820,7 +820,7 @@ void Setting::draw() const
 	else
 	{
 		// Menuバー文字
-		FontAsset(U"Medium_30")(U"FullScrean").draw(Scene::Center().movedBy(-300, -25), Color{ 255, 255, 255, 127 });
+		FontAsset(U"Medium_30")(U"FullScreen").draw(Scene::Center().movedBy(-300, -25), Color{ 255, 255, 255, 127 });
 	}
 
 	// MasterVolumeメニュー
