@@ -16,6 +16,8 @@ void Main()
 	// エスケープキーを押しても終了しないようになる
 	System::SetTerminationTriggers(UserAction::CloseButtonClicked);
 
+	// 日本語入力カット
+	Platform::Windows::TextInput::DisableIME();
 
 	// Window
 	// シーンのサイズを固定

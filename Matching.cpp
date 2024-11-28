@@ -22,11 +22,13 @@ Matching::Matching(const InitData& init)
 	}
 
 	net->ResetData();
+
+	// TODO: Printの意味のNASA(非同期処理にしたい)
 	Print << U"迷路作成中";
 
 	//if (getData().maze.isEmpty())
 	{
-		Maze maze(MazeSize);
+		Maze maze(getData().maze.size(), getData().DigLength);
 		getData().maze = maze.coordinate;
 	}
 

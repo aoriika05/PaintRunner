@@ -60,20 +60,9 @@ Title::Title(const InitData& init)
 
 			for (const auto& key : section.keys)
 			{
-				if (key.name == U"FullScrean")
+				if (key.name == U"FullScreen")
 				{
-					if (key.value == U"true")
-					{
-						Title_Fullscreen = true;
-					}
-					else if (key.value == U"false")
-					{
-						Title_Fullscreen = false;
-					}
-					else
-					{
-						throw Error{ U"Failed to load `config.ini`_[Window]_FullScrean" };
-					}
+					Title_Fullscreen = Parse<bool>(key.value);
 				}
 				else if (key.name == U"width")
 				{

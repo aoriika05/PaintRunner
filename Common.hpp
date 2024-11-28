@@ -60,6 +60,8 @@ struct GameData
 
 	// 対戦相手の名前
 	String Opponent_name;
+
+	int32 DigLength;
 };
 
 using App = SceneManager<State, GameData>;//ScenManagerでシーン管理ができる。usingは名前空間内の変数や関数を個別に指定する等

@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Common.hpp" // OpenSiv3D v0.6.2
 inline int DigNum;
-inline Size MazeSize;
+inline Size inl_MazeSize;
 
 class Maze
 {
@@ -311,60 +311,6 @@ private:
 		Left = 3
 	};
 
-public:
-	Size MapSize;
-	Size Goal;
-	Grid<int32> coordinate; //迷路のデータを保存するもの
-	Grid<int32> MapToSearch;
-	Size Start1;
-	Size Start2;
-
-
-	Maze(Size mazesize = Size{ MazeSize })
-		: MapSize{ mazesize } //2n+1
-		,
-		coordinate(MazeSize.y, MazeSize.x)
-	{
-
-
-		MapSize = MazeSize;
-		//外周をすべて通路にしてそれ以外を壁にする
-		for (auto i : step(MapSize))
-		{
-			if ((i.y == 0) || (i.y == MapSize.y - 1) || (i.x == 0) || (i.x == MapSize.x - 1))
-			{
-				coordinate[i.x][i.y] = 0;
-			}
-			else
-			{
-				coordinate[i.x][i.y] = 1;
-			}
-		}
-
-		//1,1から掘る
-		Dig(Size(1, 1));
-
-		//ループを作るためにランダムに壁を通路にする
-		RandomDig(DigNum);
-
-		//外周を壁にする
-		for (auto i : step(MapSize))
-		{
-			if ((i.y == 0) || (i.y == MapSize.y - 1) || (i.x == 0) || (i.x == MapSize.x - 1))
-			{
-				coordinate[i.x][i.y] = 1;
-			}
-		}
-
-		MapToSearch = coordinate;
-
-		Goal = CreateRoad();
-		coordinate[Goal.x][Goal.y] = 2;
-
-		Start1 = Size{ 1,1 };
-		Start2 = Size{ MapSize.x - 2,MapSize.y - 2 };
-	}
-
 	//n個ランダムに掘る
 	void RandomDig(int n)
 	{
@@ -386,6 +332,56 @@ public:
 				n--;
 			}
 		}
+	}
+
+public:
+	Size MapSize;
+	Size Goal;
+	Grid<int32> coordinate; //迷路のデータを保存するもの
+	Grid<int32> MapToSearch;
+	Size Start1;
+	Size Start2;
+
+
+	Maze(Size mazesize, int32 digLen = DigNum)
+		: MapSize{ mazesize } //2n+1
+		, coordinate{ mazesize }
+	{
+		//外周をすべて通路にしてそれ以外を壁にする
+		for (auto i : step(MapSize))
+		{
+			if ((i.y == 0) || (i.y == MapSize.y - 1) || (i.x == 0) || (i.x == MapSize.x - 1))
+			{
+				coordinate[i.x][i.y] = 0;
+			}
+			else
+			{
+				coordinate[i.x][i.y] = 1;
+			}
+		}
+
+		//1,1から掘る
+		Dig(Size(1, 1));
+
+		//ループを作るためにランダムに壁を通路にする
+		RandomDig(digLen);
+
+		//外周を壁にする
+		for (auto i : step(MapSize))
+		{
+			if ((i.y == 0) || (i.y == MapSize.y - 1) || (i.x == 0) || (i.x == MapSize.x - 1))
+			{
+				coordinate[i.x][i.y] = 1;
+			}
+		}
+
+		MapToSearch = coordinate;
+
+		Goal = CreateRoad();
+		coordinate[Goal.x][Goal.y] = 2;
+
+		Start1 = Size{ 1,1 };
+		Start2 = Size{ MapSize.x - 2,MapSize.y - 2 };
 	}
 
 	void PrintMaze()

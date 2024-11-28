@@ -37,7 +37,7 @@ private:
 	Player2 player2;
 	bool getname;
 	//琢磨
-	Gen_Item GI = Gen_Item(MazeSize);
+	Gen_Item GI = Gen_Item(inl_MazeSize);
 	Item voidItem=Item(0);
 
 	Array<int> ItemUsed = { 0,0,0 };

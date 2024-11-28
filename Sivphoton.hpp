@@ -80,7 +80,7 @@ public:
 	//	m_client->opJoinRandomRoom({}, static_cast<uint8>(Clamp(maxPlayers, 1, 255)));
 	//}
 
-	void joinwithSize(const Size size=MazeSize)
+	void joinwithSize(const Size size=inl_MazeSize)
 	{
 		String::value_type sizechr;
 
@@ -171,7 +171,7 @@ public:
 		if (eventCode == 1)
 		{
 			int a, b;
-			maze = rle.reverse(eventContent, MazeSize.x, MazeSize.y, &a, &b);
+			maze = rle.reverse(eventContent, inl_MazeSize.x, inl_MazeSize.y, &a, &b);
 			maze.value()[a][b] = 2;
 		}
 
@@ -183,7 +183,7 @@ public:
 		if(eventCode==55)
 		{
 			int a, b;
-			EnemyMapState = rle.reverse(eventContent, MazeSize.x, MazeSize.y, &a, &b);
+			EnemyMapState = rle.reverse(eventContent, inl_MazeSize.x, inl_MazeSize.y, &a, &b);
 		}
 	}
 
@@ -386,4 +386,9 @@ class MyNetWorkV2 : public Multiplayer_Photon
 {
 public:
 	using Multiplayer_Photon::Multiplayer_Photon;
+
+	void joinOrCreateSelTypeRoom(String::value_type type)
+	{
+		
+	}
 };

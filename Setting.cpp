@@ -109,399 +109,15 @@ void Setting::update()
 	switch (Setting_Menu_Select)
 	{
 	case 0:
+		TextInput::UpdateText(getData().UserName, TextInputMode::AllowBackSpace);
 
-		// 6文字以下の時
-		if (getData().UserName.length() < 6)
-		{
-			// Shiftあり26文字
-			if (KeyShift.pressed())
-			{
-				if (KeyA.down())
-				{
-					// 文字の追加
-					getData().UserName += U"A";
-
-					// INIファイルの更新
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-
-					// 保存
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyB.down())
-				{
-					getData().UserName += U"B";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyC.down())
-				{
-					getData().UserName += U"C";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyD.down())
-				{
-					getData().UserName += U"D";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyE.down())
-				{
-					getData().UserName += U"E";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyF.down())
-				{
-					getData().UserName += U"F";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyG.down())
-				{
-					getData().UserName += U"G";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyH.down())
-				{
-					getData().UserName += U"H";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyI.down())
-				{
-					getData().UserName += U"I";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyJ.down())
-				{
-					getData().UserName += U"J";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyK.down())
-				{
-					getData().UserName += U"K";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyL.down())
-				{
-					getData().UserName += U"L";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyM.down())
-				{
-					getData().UserName += U"M";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyN.down())
-				{
-					getData().UserName += U"N";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyO.down())
-				{
-					getData().UserName += U"O";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyP.down())
-				{
-					getData().UserName += U"P";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyQ.down())
-				{
-					getData().UserName += U"Q";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyR.down())
-				{
-					getData().UserName += U"R";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyS.down())
-				{
-					getData().UserName += U"S";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyT.down())
-				{
-					getData().UserName += U"T";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyU.down())
-				{
-					getData().UserName += U"U";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyV.down())
-				{
-					getData().UserName += U"V";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyW.down())
-				{
-					getData().UserName += U"W";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyX.down())
-				{
-					getData().UserName += U"X";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyY.down())
-				{
-					getData().UserName += U"Y";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyZ.down())
-				{
-					getData().UserName += U"Z";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-			}
-			else	// Shiftなし26文字
-			{
-				if (KeyA.down())
-				{
-					// 文字の追加
-					getData().UserName += U"a";
-
-					// INIファイルの更新
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-
-					// 保存
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyB.down())
-				{
-					getData().UserName += U"b";
-	
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyC.down())
-				{
-					getData().UserName += U"c";
-	
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyD.down())
-				{
-					getData().UserName += U"d";
-						
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyE.down())
-				{
-					getData().UserName += U"e";
-	
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyF.down())
-				{
-					getData().UserName += U"f";
-							
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyG.down())
-				{
-					getData().UserName += U"g";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyH.down())
-				{
-					getData().UserName += U"h";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyI.down())
-				{
-					getData().UserName += U"i";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyJ.down())
-				{
-					getData().UserName += U"j";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyK.down())
-				{
-					getData().UserName += U"k";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyL.down())
-				{
-					getData().UserName += U"l";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyM.down())
-				{
-					getData().UserName += U"m";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyN.down())
-				{
-					getData().UserName += U"n";
-	
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyO.down())
-				{
-					getData().UserName += U"o";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyP.down())
-				{
-					getData().UserName += U"p";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyQ.down())
-				{
-					getData().UserName += U"q";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyR.down())
-				{
-					getData().UserName += U"r";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyS.down())
-				{
-					getData().UserName += U"s";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyT.down())
-				{
-					getData().UserName += U"t";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyU.down())
-				{
-					getData().UserName += U"u";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyV.down())
-				{
-					getData().UserName += U"v";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyW.down())
-				{
-					getData().UserName += U"w";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyX.down())
-				{
-					getData().UserName += U"x";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyY.down())
-				{
-					getData().UserName += U"y";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-				if (KeyZ.down())
-				{
-					getData().UserName += U"z";
-
-					Setting_ini[U"Name.UserName"] = getData().UserName;
-					Setting_ini.save(U"config.ini");
-				}
-			}
-		}
-
-		// 一文字戻る
-		if (KeyBackspace.down() && getData().UserName.length() > 0)
+		if (getData().UserName.length() > 6)
 		{
 			getData().UserName.pop_back();
-
-			Setting_ini[U"Name.UserName"] = getData().UserName;
-			Setting_ini.save(U"config.ini");
 		}
+
+		// INIファイルの更新
+		Setting_ini[U"Name.UserName"] = getData().UserName;
 
 		break;
 
@@ -526,9 +142,7 @@ void Setting::update()
 					Setting_ini[U"Window.width"] = Setting_Windows_Size[Setting_Window_Size_num].x;
 					Setting_ini[U"Window.height"] = Setting_Windows_Size[Setting_Window_Size_num].y;
 
-					// 保存
 				}
-					Setting_ini.save(U"config.ini");
 			}
 
 			// 左キー
@@ -547,9 +161,6 @@ void Setting::update()
 					// INIファイルの更新
 					Setting_ini[U"Window.width"] = Setting_Windows_Size[Setting_Window_Size_num].x;
 					Setting_ini[U"Window.height"] = Setting_Windows_Size[Setting_Window_Size_num].y;
-
-					// 保存
-					Setting_ini.save(U"config.ini");
 				}
 			}
 		}
@@ -557,25 +168,23 @@ void Setting::update()
 		break;
 
 	case 2:	// Windowフルスクリーンメニュー
-		if (Setting_Fullscreen)
+		// 左キー
+		if (KeyRight.down())
 		{
-			// 左キー
-			if (KeyRight.down())
-			{
-				// FullScreen設定解除
-				Setting_Fullscreen = false;
-				Window::SetFullscreen(false);
-			}
+			// FullScreen設定解除
+			Setting_Fullscreen = false;
+			Window::SetFullscreen(false);
+
+			Setting_ini.write(U"Window", U"FullScreen", false);
 		}
-		else if (!Setting_Fullscreen)
+		// 右キー
+		if (KeyLeft.down())
 		{
-			// 右キー
-			if (KeyLeft.down())
-			{
-				// FullScreen設定
-				Setting_Fullscreen = true;
-				Window::SetFullscreen(true);
-			}
+			// FullScreen設定
+			Setting_Fullscreen = true;
+			Window::SetFullscreen(true);
+
+			Setting_ini.write(U"Window", U"FullScreen", true);
 		}
 
 		break;
@@ -621,9 +230,6 @@ void Setting::update()
 		// INIファイルの更新
 		Setting_ini[U"Volume.globalVolume"] = getData().globalVolume;
 
-		// 保存
-		Setting_ini.save(U"config.ini");
-
 		break;
 
 	case 4:	// BGMVolumeメニュー
@@ -667,61 +273,58 @@ void Setting::update()
 		// INIファイルの更新
 		Setting_ini[U"Volume.MixBus0Volume"] = getData().MixBus0Volume;
 
-		// 保存
-		Setting_ini.save(U"config.ini");
-
 		break;
 
 	case 5:	// SEVolumeメニュー
 
 		// 左キー
-			if (KeyRight.down())
+		if (KeyRight.down())
+		{
+			if (getData().MixBus1Volume <= 0.9)
 			{
-				if (getData().MixBus1Volume <= 0.9)
-				{
-					// 音量を10%プラス
-					getData().MixBus1Volume = getData().MixBus1Volume + 0.1;
-				}
-				else
-				{
-					// 最大音量
-					getData().MixBus1Volume = 1.0;
-				}
+				// 音量を10%プラス
+				getData().MixBus1Volume = getData().MixBus1Volume + 0.1;
 			}
-
-			// 右キー
-			if (KeyLeft.down())
+			else
 			{
-				if (getData().MixBus1Volume >= 0.1)
-				{
-					// 音量を10%マイナス
-					getData().MixBus1Volume = getData().MixBus1Volume - 0.1;
-				}
-				else
-				{
-					// 最大音量
-					getData().MixBus1Volume = 0.0;
-				}
+				// 最大音量
+				getData().MixBus1Volume = 1.0;
 			}
+		}
 
-			// 調節用スライダー
-			SimpleGUI::Slider(U"{:>3.0f}%"_fmt(getData().MixBus1Volume * 100), getData().MixBus1Volume, 0.00, 1.00, Scene::Center().movedBy(0, 125), 60, 150);
+		// 右キー
+		if (KeyLeft.down())
+		{
+			if (getData().MixBus1Volume >= 0.1)
+			{
+				// 音量を10%マイナス
+				getData().MixBus1Volume = getData().MixBus1Volume - 0.1;
+			}
+			else
+			{
+				// 最大音量
+				getData().MixBus1Volume = 0.0;
+			}
+		}
 
-			// MixBus1 の音量を変更
-			GlobalAudio::BusSetVolume(MixBus1, getData().MixBus1Volume);
+		// 調節用スライダー
+		SimpleGUI::Slider(U"{:>3.0f}%"_fmt(getData().MixBus1Volume * 100), getData().MixBus1Volume, 0.00, 1.00, Scene::Center().movedBy(0, 125), 60, 150);
 
-			// INIファイルの更新
-			Setting_ini[U"Volume.MixBus1Volume"] = getData().MixBus1Volume;
+		// MixBus1 の音量を変更
+		GlobalAudio::BusSetVolume(MixBus1, getData().MixBus1Volume);
 
-			// 保存
-			Setting_ini.save(U"config.ini");
+		// INIファイルの更新
+		Setting_ini[U"Volume.MixBus1Volume"] = getData().MixBus1Volume;
 
-			break;
+		break;
 
 	case 6:	// EXIT
 		if (KeyEnter.down())
 		{
 			AudioAsset(U"Setting_BGM" + Format(Setting_Audio_BGM_num)).stop();
+
+			// 保存
+			Setting_ini.save(U"config.ini");
 
 			// タイトルシーンへ
 			changeScene(State::Title);

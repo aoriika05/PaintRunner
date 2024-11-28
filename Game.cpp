@@ -21,7 +21,7 @@ Game::Game(const InitData& init)
 		}
 	}
 
-	area.resize(MazeSize);
+	area.resize(inl_MazeSize);
 
 	//Print << area.size();
 	for (auto i : step(area.size())) {
@@ -41,7 +41,7 @@ Game::Game(const InitData& init)
 	getData().ChangeMaze.resize(300);
 	for (auto i : step(300))
 	{
-		getData().ChangeMaze[i].resize(MazeSize);
+		getData().ChangeMaze[i].resize(inl_MazeSize);
 	}
 	if (net->isMasterClient())
 	{
@@ -61,8 +61,8 @@ Game::Game(const InitData& init)
 	}
 	if (playernum == 2)
 	{
-		player.setareapos(MazeSize.x - 2, MazeSize.y - 2);
-		player.oldpos = { (MazeSize.x - 2) * 100 + 50 ,(MazeSize.y - 2) * 100 + 50 };
+		player.setareapos(inl_MazeSize.x - 2, inl_MazeSize.y - 2);
+		player.oldpos = { (inl_MazeSize.x - 2) * 100 + 50 ,(inl_MazeSize.y - 2) * 100 + 50 };
 	}
 
 	MapSharedSw.start();
@@ -82,10 +82,10 @@ void Game::update()
 	{
 		AudioAsset(U"Game_BGM" + Format(Game_Audio_BGM_num)).stop();
 		//シーン遷移
-		getData().ClearMaze.resize(MazeSize);
-		for (auto i : step(MazeSize.y))
+		getData().ClearMaze.resize(inl_MazeSize);
+		for (auto i : step(inl_MazeSize.y))
 		{
-			for (auto j : step(MazeSize.x))
+			for (auto j : step(inl_MazeSize.x))
 			{
 				getData().ClearMaze[i][j] = area[i][j].areainfo;
 			}
@@ -173,9 +173,9 @@ void Game::update()
 	player.GetDirection();
 	//Console << player2.pos;
 	//Console << player.pos;
-	for (auto i : step(MazeSize.y))
+	for (auto i : step(inl_MazeSize.y))
 	{
-		for (auto j : step(MazeSize.x))
+		for (auto j : step(inl_MazeSize.x))
 		{
 			if (player.collision(area[i][j].wall.left(), area[i][j].areainfo) == 0)//壁の左側に触れたか
 			{
@@ -199,9 +199,9 @@ void Game::update()
 	{
 		player.TouchWall(left, right, top, bottom);//壁に触れたら反発する
 	}
-	for (auto i : step(MazeSize.y))
+	for (auto i : step(inl_MazeSize.y))
 	{
-		for (auto j : step(MazeSize.y))
+		for (auto j : step(inl_MazeSize.y))
 		{
 			area[i][j].draw(i, j, player.pos.x, player.pos.y);//それぞれのマスの描画
 		}
@@ -215,8 +215,8 @@ void Game::update()
 			{
 				while (1)
 				{
-					temp1 = Random(0, MazeSize.y-1);
-					temp2 = Random(0, MazeSize.x-1);
+					temp1 = Random(0, inl_MazeSize.y-1);
+					temp2 = Random(0, inl_MazeSize.x-1);
 					if (area[temp1][temp2].areainfo != 1)
 					{
 						player.setareapos(temp1, temp2);
@@ -233,8 +233,8 @@ void Game::update()
 		{
 			while (1)
 			{
-				temp1 = Random(0, MazeSize.y-1);
-				temp2 = Random(0, MazeSize.x-1);
+				temp1 = Random(0, inl_MazeSize.y-1);
+				temp2 = Random(0, inl_MazeSize.x-1);
 				if (area[temp1][temp2].areainfo != 1)
 				{
 					player.setareapos(temp1, temp2);
@@ -564,7 +564,7 @@ void Game::update()
 	player2.GetDirection();
 	player.draw(playernum);//描画
 	
-	for (auto i : step(MazeSize))
+	for (auto i : step(inl_MazeSize))
 	{
 		getData().ChangeMaze[time.getEtime()][i.y][i.x] = area[i.y][i.x].areainfo;
 	}
@@ -607,27 +607,27 @@ void Game::update()
 	player.oldpos = player.getpos();
 	player2.oldpos = player2.pos;
 	Rect(597, 3, 200, 200).drawFrame(0, 3);
-	for (auto i : step(MazeSize.x))
+	for (auto i : step(inl_MazeSize.x))
 	{
-		for (auto j : step(MazeSize.y))
+		for (auto j : step(inl_MazeSize.y))
 		{
 			if (playernum == 1)
 			{
 				if (area[i][j].areainfo == 3)
 				{
-					RectF((double)(597) + (double)(200) / (double)(MazeSize.x) * (double)(i), (double)(3) + (double)(200) / (double)(MazeSize.y) * (double)(j), (double)(200) / (double)(MazeSize.x), (double)(200) / (double)(MazeSize.y)).draw(Palette::Blue);
+					RectF((double)(597) + (double)(200) / (double)(inl_MazeSize.x) * (double)(i), (double)(3) + (double)(200) / (double)(inl_MazeSize.y) * (double)(j), (double)(200) / (double)(inl_MazeSize.x), (double)(200) / (double)(inl_MazeSize.y)).draw(Palette::Blue);
 				}
 			}
 			if (playernum == 2)
 			{
 				if (area[i][j].areainfo == 4)
 				{
-					RectF((double)(597) + (double)(200) / (double)(MazeSize.x) * (double)(i), (double)(3) + (double)(200) / (double)(MazeSize.y) * (double)(j), (double)(200) / (double)(MazeSize.x), (double)(200) / (double)(MazeSize.y)).draw(Palette::Red);
+					RectF((double)(597) + (double)(200) / (double)(inl_MazeSize.x) * (double)(i), (double)(3) + (double)(200) / (double)(inl_MazeSize.y) * (double)(j), (double)(200) / (double)(inl_MazeSize.x), (double)(200) / (double)(inl_MazeSize.y)).draw(Palette::Red);
 				}
 			}
 		}
 	}
-	Circle(597 + 100 / (double)(MazeSize.x) + 200 /(double)(MazeSize.x) * player.getareapos().x, 3 + 100 / (double)(MazeSize.x) + 200 / (double)(MazeSize.x) * player.getareapos().y, 100 / (double)(MazeSize.x)).draw(Palette::White);
+	Circle(597 + 100 / (double)(inl_MazeSize.x) + 200 /(double)(inl_MazeSize.x) * player.getareapos().x, 3 + 100 / (double)(inl_MazeSize.x) + 200 / (double)(inl_MazeSize.x) * player.getareapos().y, 100 / (double)(inl_MazeSize.x)).draw(Palette::White);
 	if(MapSharedSw.s()>3)
 	{
 		m_PaintArea.resize(area.size());
