@@ -343,7 +343,7 @@ public:
 		UsedItem2 = { 0,0,0,0,0,0 };
 		UsedItem = 0;
 		enemypos = Size{ 0,0 };
-		map.pointreset();
+		//map.pointreset();
 		EnemyMapState = none;
 		EnemyPlayerName = none;
 	}
@@ -364,7 +364,7 @@ public:
 	Array<Size> enpositons;
 	Optional<double> StartTiming=none;
 	Optional<Grid<int>> maze;
-	Mapinfo map;
+	//Mapinfo map;
 	Optional<Grid<int>> EnemyMapState=none;
 	Optional<String> EnemyPlayerName = none;
 

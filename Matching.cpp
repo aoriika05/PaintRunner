@@ -97,7 +97,7 @@ void Matching::update()
 				}
 
 				net->opRaiseEvent(2, getData().UserName);
-				net->map.gridinport(getData().maze);
+				//net->map.gridinport(getData().maze);
 				IsOnce = false;
 				changeScene(State::Game);
 			}else if (net->maze&&net->EnemyPlayerName)
@@ -110,7 +110,7 @@ void Matching::update()
 				}
 
 				net->opRaiseEvent(2, getData().UserName);
-				net->map.gridinport(getData().maze);
+				//net->map.gridinport(getData().maze);
 				IsOnce = false;
 				changeScene(State::Game);
 			}
@@ -136,6 +136,9 @@ void Matching::update()
 
 		net->update();
 	}
+
+
+	getData().network.update();
 
 	// k
 	text_time += Scene::DeltaTime();

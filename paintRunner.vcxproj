@@ -123,7 +123,6 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Howtoplay.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="mapinfo.cpp" />
     <ClCompile Include="Matching.cpp" />
     <ClCompile Include="Multiplayer_Photon.cpp" />
     <ClCompile Include="NetworkSystem.cpp" />
@@ -349,7 +348,6 @@
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameClass.hpp" />
     <ClInclude Include="Howtoplay.hpp" />
-    <ClInclude Include="mapinfo.hpp" />
     <ClInclude Include="Matching.hpp" />
     <ClInclude Include="Maze.hpp" />
     <ClInclude Include="Multiplayer_Photon.hpp" />

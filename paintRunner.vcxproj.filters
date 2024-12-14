@@ -153,9 +153,6 @@
     <ClCompile Include="Howtoplay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mapinfo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Matching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -865,9 +862,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Howtoplay.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mapinfo.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Matching.hpp">
